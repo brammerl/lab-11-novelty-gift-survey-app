@@ -1,5 +1,5 @@
 
-export class Products {
+export class SuperArray {
     constructor(array) {
         this.array = array.slice();
     }
@@ -22,14 +22,20 @@ export class Products {
         return productObj; 
     }
 
-    
+    //saving to local storage
+    save() {
+        localStorage.setItem('session', JSON.stringify(this.array));
+    }   
+   
 }
 
-// getObjectById(array, id) {
-//     array.forEach((object) => {
-//         if (array.id === id) {
-//             return object;
-//         }
-//     });
-// }
+export function getById(array, id) {
+    for (let i = 0; i < array.length; i++) {
+        let item = array[i];
 
+        if (item.id === id) {
+            return item;
+        }
+    }
+    return null;
+}

@@ -1,12 +1,19 @@
 import items from './data/items.js';
-import { Products } from './common/utils.js';
+import { SuperArray } from './common/utils.js';
+import { updateMarketData } from './overall.js';
 
-const itemCopy = new Products(items);
+
+const itemCopy = new SuperArray(items);
+
+const marketDataArray = items.slice();
+
+console.log(marketDataArray);
 
 
 const images = document.querySelectorAll('img');
 const radio = document.querySelectorAll('input');
 
+let totalClicks = 0;
 
 
 const renderProducts = () => {
@@ -14,9 +21,14 @@ const renderProducts = () => {
     let choiceTwo = itemCopy.randomObject();
     let choiceThree = itemCopy.randomObject();
     
-    choiceOne.views++;
-    choiceTwo.views++;
-    choiceThree.views++;
+    choiceOne.views = choiceOne.views + 1;
+    choiceTwo.views = choiceTwo.views + 1;
+    choiceThree.views = choiceThree.views + 1;
+
+    if (totalClicks === 25) {
+        totalClicks = 0;
+        updateMarketData(marketDataArray);
+    }
 
     while (choiceOne.id === choiceTwo .id) {
         choiceTwo = itemCopy.randomObject();
@@ -49,24 +61,22 @@ const renderProducts = () => {
         } else if (i === 2) {
             radioTag.value = choiceThree.id;
         }
-    });
-
     
+    });
 };
+
+renderProducts();
 
 radio.forEach((radioTag) => {
     radioTag.addEventListener('click', (event) => {
+        totalClicks++;
         let selected = itemCopy.getProduct(event.target.value);
         if (event.target.value === selected.id) {
-            selected.clicks += 1;
-            selected.views += 1;
+            selected.clicks = selected.clicks + 1;
         }
-    });
+        console.log(totalClicks);
+        itemCopy.save('session');
+        renderProducts();
+    }); 
 });
 
-
-
-const myButton = document.querySelector('button');
-myButton.addEventListener('click', renderProducts);
-
-renderProducts();
