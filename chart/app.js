@@ -15,8 +15,9 @@ viewsClicksArray.forEach((item) => {
 });
 
 const ctx = document.getElementById('chart').getContext('2d');
-
+/* eslint-disable*/
 new Chart (ctx, {
+/* eslint-enable */
     type: 'horizontalBar',
     data: {
         labels: ids,

@@ -7,14 +7,10 @@ const itemCopy = new SuperArray(items);
 
 const marketDataArray = items.slice();
 
-console.log(marketDataArray);
-
-
 const images = document.querySelectorAll('img');
 const radio = document.querySelectorAll('input');
 
 let totalClicks = 0;
-
 
 const renderProducts = () => {
     let choiceOne = itemCopy.randomObject();
@@ -28,6 +24,7 @@ const renderProducts = () => {
     if (totalClicks === 25) {
         totalClicks = 0;
         updateMarketData(marketDataArray);
+        location.replace('./chart/index.html');
     }
 
     while (choiceOne.id === choiceTwo .id) {
