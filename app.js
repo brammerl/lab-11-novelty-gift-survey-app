@@ -71,7 +71,6 @@ radio.forEach((radioTag) => {
         if (event.target.value === selected.id) {
             selected.clicks = selected.clicks + 1;
         }
-        console.log(totalClicks);
         itemCopy.save('session');
         renderProducts();
     }); 
