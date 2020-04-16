@@ -1,5 +1,6 @@
 const viewsClicksArray = JSON.parse(localStorage.getItem('session'));
 const myButton = document.getElementById('return');
+const statButton = document.getElementById('market');
 
 const clicks = [];
 const ids = [];
@@ -48,4 +49,8 @@ myButton.addEventListener('click', () => {
     localStorage.removeItem('session');
 });
 
+statButton.addEventListener('click', () => {
+    location.replace('../marketing/index.html');
+    localStorage.removeItem('session');
+});
 
