@@ -1,4 +1,5 @@
 const viewsClicksArray = JSON.parse(localStorage.getItem('session'));
+const myButton = document.getElementById('return');
 
 const clicks = [];
 const ids = [];
@@ -42,4 +43,9 @@ new Chart (ctx, {
     }
 });
 
-localStorage.removeItem('session');
+myButton.addEventListener('click', () => {
+    location.replace('../index.html');
+    localStorage.removeItem('session');
+});
+
+

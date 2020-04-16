@@ -1,3 +1,9 @@
+#container {
+    margin: auto;
+    width: 80%;
+}
+
+
 input {
     display: none;
 }
@@ -13,3 +19,27 @@ img {
     border-radius: 8px;
     box-shadow: -1px 0px 4px 2px rgba(0,0,0,0.5);
 }
+
+header {
+    text-align: center;
+    height: 50px;
+    font-size: 30px;
+}
+
+#survey {
+    display: flex;
+    border: 2px solid black;
+    text-align: center;
+    align-items: left;
+}
+
+h2 {
+    text-align: center;
+}
+
+#instructions {
+    display: flex;
+    float: left;
+    flex-wrap: wrap;
+}
+

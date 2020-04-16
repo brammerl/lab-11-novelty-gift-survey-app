@@ -10,20 +10,37 @@
 </head>
 
 <body>
-    <div>
-        <label id='choiceOne'>
-            <input type='radio' name='choice' ></input>
-            <image id='imageOne'/>
-        </label>
-        <label id='choiceTwo'>
-            <input type='radio' name='choice' ></input>
-            <img id='imageTwo'/>
-        </label>
-        <label id='choiceThree'>
-            <input type='radio' name='choice'></input>
-            <img id='imageThree'/>
-        </label>
-    </div>
+    <header>Product Survey</header>
+    <div id='container'>
+        <div id='instructions'>
+            <h2>Instructions</h2>
+            <ol>
+                <li>
+                    You will be presented with three products to choose from
+                </li>
+                <li>
+                    Choose an product of the three you would be most likely to buy
+                </li>
+                <li>
+                    Once you have completed 25 rounds of selecting, you will be rediredted to your results. 
+                 </li>
+            </ol>
+         </div>
+         <div id='survey'>
+            <label id='choiceOne'>
+                <input type='radio' name='choice' ></input>
+                <image id='imageOne'/>
+            </label>
+            <label id='choiceTwo'>
+                <input type='radio' name='choice' ></input>
+                <img id='imageTwo'/>
+             </label>
+            <label id='choiceThree'>
+                <input type='radio' name='choice'></input>
+                <img id='imageThree'/>
+            </label>
+        </div>
+</div>
     <script type="module" src="app.js"></script>
 </body>
 

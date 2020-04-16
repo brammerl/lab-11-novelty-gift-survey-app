@@ -36,7 +36,7 @@ const renderProducts = () => {
     }
 
     while (choiceOne.id === choiceThree.id) {
-        choiceThree = itemCopy.randomObject();
+        choiceOne = itemCopy.randomObject();
     }
 
     images.forEach((image, i) => {
